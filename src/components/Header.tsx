@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, Image, View, TextInput } from "react-native";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import colors from "../styles/colors";
 
 import profileImage from "../assets/thaua-martins.jpeg";
 import fonts from "../styles/fonts";
 
 export function Header() {
+  const [userName, setUserName] = useState<string>();
+
+  useEffect(() => {
+    async function loadStoragedUserName() {
+      const storagedUser = await AsyncStorage.getItem("@plantmanager:user");
+      setUserName(storagedUser || "");
+    }
+
+    loadStoragedUserName();
+  }, []);
+
   return (
     <View style={styles.container}>
       <View>
         <Text style={styles.greeting}>Olá,</Text>
-        <Text style={styles.userName}>Thauã</Text>
+        <Text style={styles.userName}>{userName}</Text>
       </View>
 
       <Image style={styles.image} source={profileImage} />
@@ -25,7 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: getStatusBarHeight(),
+    marginTop: getStatusBarHeight() + 15,
   },
   greeting: {
     fontSize: 32,
