@@ -38,7 +38,7 @@ export function UserIdentification() {
     setName(value);
   }
 
-  function handleSubmit() {
+  function handleMoveOn() {
     navigation.navigate("Confirmation");
   }
 
@@ -72,7 +72,7 @@ export function UserIdentification() {
               <View style={styles.footer}>
                 <Button
                   disabled={!isFilled}
-                  onPress={handleSubmit}
+                  onPress={handleMoveOn}
                   title="Confirmar"
                 />
               </View>
