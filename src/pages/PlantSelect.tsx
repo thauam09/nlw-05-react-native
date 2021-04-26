@@ -82,7 +82,6 @@ export function PlantSelect() {
 
   useEffect(() => {
     api.get("/plants_environments?_sort=title&_order=asc").then(({ data }) => {
-      console.log(data);
       setEnvironments([
         {
           key: "all",
