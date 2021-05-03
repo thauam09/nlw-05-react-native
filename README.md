@@ -14,9 +14,9 @@
 
 ## Índice
 
-- [Sobre 📖](#-sobre-📖)
-- [Tecnologias Utilizadas 🚀](#-Tecnologias-Utilizadas-🚀)
-- [Como Rodar o Projeto 📦](#-Como-Rodar-o-Projeto-📦)
+- [Sobre 📖](#-sobre-)
+- [Tecnologias Utilizadas 🚀](#-Tecnologias-Utilizadas-)
+- [Como Rodar o Projeto 📦](#-Como-Rodar-o-Projeto-)
 
 ---
 
